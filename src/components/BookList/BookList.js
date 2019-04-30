@@ -19,7 +19,7 @@ class BookList extends Component {
             <BookItem
                 book={book}
                 handleClick={this.handleClick}
-            />
+            ></BookItem>
             </div>
         );
     }

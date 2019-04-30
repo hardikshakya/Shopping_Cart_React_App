@@ -1,0 +1,26 @@
+.Nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 40px;
+    border-bottom: 1px solid #DFDFDF;
+}
+
+.Nav-item {
+    flex-grow: 1;
+}
+
+.Nav-logo {
+    /*flex-grow: 5;*/
+    text-align: center;
+}
+
+.Nav-logo img {
+    width: 150px;
+    /*color: transparent;*/
+}
+
+.Nav-cart {
+    text-align: right;
+    padding-top: 4px;
+    color: #2F195F;
+}

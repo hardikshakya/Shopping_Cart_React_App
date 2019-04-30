@@ -1,0 +1,79 @@
+.BookItem {
+    position: relative;
+    display: flex;
+    margin-top: 50px;
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.20);
+    border-radius: 5px;
+}
+
+.BookItem__cat {
+    text-transform: uppercase;
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    color: #888888;
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.BookItem__img {
+    /*max-width: 700px;*/
+}
+
+.BookItem__img img {
+    margin-left: -99999px;
+}
+
+.BookItem__details {
+    padding-left: 15px;
+}
+
+.BookItem__details h4 {
+    margin-top: 40px;
+}
+
+.BookItem__details h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #444444;
+}
+
+.BootItem__description {
+    width: 400px;
+}
+
+.BookItem__details h4,.BootItem__description {
+    padding-right: 20px;
+}
+
+.BookItem__price-cart {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.BookItem__price-cart p {
+    font-size: 25px;
+    color: #7353BA;
+}
+
+.BookItem__price-cart button {
+    background: #2F195F;
+    border: none;
+    color: #fff;
+    padding: 5px 15px;
+    transition: background 100ms ease-in;
+    outline: none;
+}
+
+.BookItem__price-cart button:hover {
+    background: #7353BA;
+}
+
+.BookItem__stock {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    font-weight: bold;
+}

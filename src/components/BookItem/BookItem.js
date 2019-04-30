@@ -1,15 +1,15 @@
 import React, { Component} from 'react';
-
-import './BookIten.css';
+// import './BookIten.css';
 
 class BookIten extends Component{
     render()
     {
+        const book = this.props.book;
         return(
             <div className="BookIten">
                 <div className="BookIten__img"
                 style={{
-                    backgroundImage: `url($\{book.image\})`,
+                    backgroundImage: `url($\{book.image})`,
                     width: '800px',
                     height: 300,
                     backgroundSize: 'contain',

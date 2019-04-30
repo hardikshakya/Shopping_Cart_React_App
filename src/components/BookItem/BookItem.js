@@ -1,23 +1,26 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
+
 import './BookIten.css';
 
-class BookIten extends Component{
-    render()
-    {
+class BookItem extends Component {
+    render() {
         const book = this.props.book;
-        return(
-            <div className="BookIten">
-                <div className="BookIten__img"
-                style={{
-                    backgroundImage: `url($\{book.image})`,
-                    width: '800px',
-                    height: 300,
-                    backgroundSize: 'contain',
-                    backgroundRepeat: 'no-repeat',
-                    backgroundPosition: 'top left'
-                }}
+        return (
+            <div className="BookItem">
+                <div className="BookItem__img"
+                    style={{
+                        backgroundImage: `url(${book.image})`,
+                        width: '800px',
+                        height: 300,
+                        backgroundSize: 'contain',
+                        backgroundRepeat: 'no-repeat',
+                        backgroundPosition: 'top left'
+                    }}
                 >
-                    <img src={book.image} alt="Book Item"></img>
+                    <img
+                        src={book.image}
+                        alt="Book Item"
+                    />
                 </div>
                 <div className="BookItem__details">
                     <div className="BookItem__cat">
@@ -27,10 +30,12 @@ class BookIten extends Component{
                     <h5>{book.author}</h5>
                     <div className="BookItem__price-cart">
                         <p>${book.price}</p>
-                        <button onClick={this.props.handleClick.bind(this, book)}>
-                            <span className="fa fa-cart-plus"></span> 
-                            Buy
-                        </button>
+                        <button
+                            onClick={this.props.handleClick.bind(this, book)}
+                        ><span className="fa fa-cart-plus"></span> Buy</button>
+                    </div>
+                    <div className="BootItem__description">
+                        {book.description}
                     </div>
                     <div className="BookItem__stock" style={{color: book.inStock >= 5 ? '#417505' : '#CE0814'}}>
                         {book.inStock} In Stock
@@ -41,4 +46,4 @@ class BookIten extends Component{
     }
 }
 
-export default BookIten;
+export default BookItem;

@@ -1,26 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import Nav from './components/Nav/Nav'
+import BookList from './components/BookList/BookList'
+import data from './data'
+// import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+
+  constructor(props) {
+      super(props)
+      this.state = {
+          books: data,
+          cart: []
+      }
+      this.handleAddToCart = this.handleAddToCart.bind(this);
+  }
+  handleAddToCart(book) {
+    console.log(book);
+    const cartItem = this.state.cart.find(x => x.id === book.id);
+    const newBooks = this.state.books.map(x => {
+      if(x.id === book.id) {
+        return Object.assign({}, x, {inStock: x.inStock - 1});
+      }
+      return x;
+    });
+    !cartItem && this.setState({cart: [...this.state.cart, book]}, () => {
+      console.log(newBooks);
+      this.setState({books: newBooks})
+    }) 
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Nav cart={this.state.cart}/>
+        <div className="App-main">
+            <BookList
+                books={this.state.books}
+                handleAddToCart={this.handleAddToCart}
+            />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
